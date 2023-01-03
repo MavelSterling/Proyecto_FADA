@@ -1,14 +1,13 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { readFile } from './helpers/readFile';
-import { createFile } from './helpers/createFile';
-import './App.css';
 import { createGroups } from './helpers/createGroups';
+import './App.css';
 
 
 const App = () => {
 
   const [myValue, setMyValue] = useState('');
-
+  const inputFile = useRef();
 
   return (
     <div className="App">
@@ -18,6 +17,7 @@ const App = () => {
         <h2>Creación de grupos {myValue}</h2>
 
         <input
+          ref={inputFile}
           type="file"
           multiple={false}
           onChange={(e) => readFile(e, setMyValue)}
@@ -26,6 +26,7 @@ const App = () => {
         <br /><br />
 
         <button
+          disabled={inputFile?.current?.files?.length === (0 || undefined) ? true : false}
           onClick={() => createGroups(myValue)}
         >
           Calcular grupos

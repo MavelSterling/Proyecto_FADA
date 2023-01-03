@@ -5,7 +5,7 @@ export const readFile = (e, setMyValue) => {
     const fileReader = new FileReader();
 
     fileReader.readAsText(file);
-
+    
     fileReader.onload = () => {
         console.log(fileReader.result);
         setMyValue(fileReader.result);
