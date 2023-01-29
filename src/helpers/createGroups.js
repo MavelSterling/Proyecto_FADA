@@ -5,8 +5,8 @@ export const createGroups = (myValue) => {
 
     /* Variables del archivo de texto */
     const N = myValue[0];
-    const K = myValue[2];
-    const rendimientoTrabajadores = workerPerformance(myValue);
+    const K = myValue[1];
+    const rendimientoTrabajadores =  myValue.slice(2, myValue.length);
     console.log("rendimientoTrabajadores: ", rendimientoTrabajadores)
     /*
       COSTE COMPUTACIONAL O(n)
