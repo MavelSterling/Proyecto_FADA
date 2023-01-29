@@ -16,7 +16,9 @@ const App = () => {
 
         <h1>Proyecto de FADA</h1>
         <h2>Creación de grupos</h2>
-        <h3>{myTitle}</h3>
+        <h3 style={
+          { wordBreak: 'break-all' , hyphens: 'auto'}
+        }>{myTitle}</h3>
         <h4>PDTA:</h4>
         <h5>
           (Ten cuidado de que tu archivo de texto, no tengo espacios de mas al final del mismo <br />
