@@ -7,6 +7,7 @@ import './App.css';
 const App = () => {
 
   const [myValue, setMyValue] = useState('');
+  const [myTitle, setMyTitle] = useState('');
   const inputFile = useRef();
 
   return (
@@ -14,13 +15,20 @@ const App = () => {
       <header className="App-header">
 
         <h1>Proyecto de FADA</h1>
-        <h2>Creación de grupos {myValue}</h2>
+        <h2>Creación de grupos</h2>
+        <h3>{myTitle}</h3>
+        <h4>PDTA:</h4>
+        <h5>
+          (Ten cuidado de que tu archivo de texto, no tengo espacios de mas al final del mismo <br />
+          Anexamos un ejemplo en el archivo .zip)
+        </h5>
+
 
         <input
           ref={inputFile}
           type="file"
           multiple={false}
-          onChange={(e) => readFile(e, setMyValue)}
+          onChange={(e) => readFile(e, setMyValue, setMyTitle)}
         />
 
         <br /><br />
